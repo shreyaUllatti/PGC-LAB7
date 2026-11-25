@@ -1,0 +1,51 @@
+========================================================================
+results\trace_baseline_events.json
+========================================================================
+Profiled window            :    351.04 ms
+Kernel busy time           :    228.52 ms
+GPU utilization (busy/span):      65.1 %
+Copy (memcpy) busy time    :    121.66 ms
+Copy overlapped with kernel:      0.00 ms
+Idle gaps > 50 us          :         9  (total 109.91 ms)
+
+Kernels (label rule: GEMM/cuBLAS -> compute-bound, else memory-bound)
+ calls   total ms label          name
+    30     151.54 compute-bound  ampere_sgemm_128x64_nn (cuBLAS GEMM)
+    30      24.42 memory-bound   elementwise_kernel (add_)
+    30      24.33 memory-bound   elementwise_kernel (mul_)
+    30      23.43 memory-bound   elementwise_kernel (relu / clamp_min)
+    10       4.80 memory-bound   reduce_kernel (sum dim=1)
+
+Memory copies
+ calls   total ms  name
+    10     118.97  Memcpy HtoD (Pageable -> Device)
+    10       2.69  Memcpy DtoH (Device -> Pageable)
+
+========================================================================
+results\trace_optimized_events.json
+========================================================================
+Profiled window            :    328.20 ms
+Kernel busy time           :    227.18 ms
+GPU utilization (busy/span):      69.2 %
+Copy (memcpy) busy time    :    111.59 ms
+Copy overlapped with kernel:     10.82 ms
+Idle gaps > 50 us          :         9  (total 89.46 ms)
+
+Kernels (label rule: GEMM/cuBLAS -> compute-bound, else memory-bound)
+ calls   total ms label          name
+    30     153.21 compute-bound  ampere_sgemm_128x64_nn (cuBLAS GEMM)
+    30      23.49 memory-bound   elementwise_kernel (add_)
+    30      23.38 memory-bound   elementwise_kernel (mul_)
+    30      22.49 memory-bound   elementwise_kernel (relu / clamp_min)
+    10       4.61 memory-bound   reduce_kernel (sum dim=1)
+
+Memory copies
+ calls   total ms  name
+    10     110.20  Memcpy HtoD (Pinned -> Device)
+    10       1.39  Memcpy DtoH (Device -> Pinned)
+
+SUMMARY
+file                     window ms  util %  overlap ms  gaps
+results\trace_baseline_events.json     351.0    65.1         0.0     9
+results\trace_optimized_events.json     328.2    69.2        10.8     9
+

@@ -1,0 +1,30 @@
+PS> nvidia-smi
+Tue Nov 24 09:50:09 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 591.74                 Driver Version: 591.74         CUDA Version: 13.1     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 4050 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |
+| N/A   70C    P8              2W /   67W |     239MiB /   6141MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A           10064    C+G   ...Browser\Application\brave.exe      N/A      |
+|    0   N/A  N/A           21220    C+G   ...Browser\Application\brave.exe      N/A      |
+|    0   N/A  N/A           24544    C+G   ... 3.44.15\bin\qgis-ltr-bin.exe      N/A      |
++-----------------------------------------------------------------------------------------+
+
+PS> python --version
+Python 3.10.6
+
+PS> python -c "import torch; print(torch.cuda.is_available(), torch.cuda.get_device_name(0))"
+True NVIDIA GeForce RTX 4050 Laptop GPU
+

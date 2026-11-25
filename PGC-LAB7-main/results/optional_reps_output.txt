@@ -1,0 +1,55 @@
+=== mode=baseline reps=1 ===
+GPU        : NVIDIA GeForce RTX 4050 Laptop GPU
+Mode       : baseline  batch size: 67 MB
+Batches    : 200
+Total time : 4.028 s
+Per batch  : 20.14 ms
+Throughput : 49.7 batches/s
+Checksum   : 4.024875e+09
+
+=== mode=optimized reps=1 ===
+GPU        : NVIDIA GeForce RTX 4050 Laptop GPU
+Mode       : optimized  batch size: 67 MB
+Batches    : 200
+Total time : 2.273 s
+Per batch  : 11.37 ms
+Throughput : 88.0 batches/s
+Checksum   : 4.024875e+09
+
+=== mode=baseline reps=3 ===
+GPU        : NVIDIA GeForce RTX 4050 Laptop GPU
+Mode       : baseline  batch size: 67 MB
+Batches    : 200
+Total time : 7.197 s
+Per batch  : 35.99 ms
+Throughput : 27.8 batches/s
+Checksum   : 4.198830e+09
+
+=== mode=optimized reps=3 ===
+GPU        : NVIDIA GeForce RTX 4050 Laptop GPU
+Mode       : optimized  batch size: 67 MB
+Batches    : 200
+Total time : 5.127 s
+Per batch  : 25.63 ms
+Throughput : 39.0 batches/s
+Checksum   : 4.198830e+09
+
+=== mode=baseline reps=8 ===
+GPU        : NVIDIA GeForce RTX 4050 Laptop GPU
+Mode       : baseline  batch size: 67 MB
+Batches    : 200
+Total time : 14.923 s
+Per batch  : 74.61 ms
+Throughput : 13.4 batches/s
+Checksum   : 4.213962e+09
+
+=== mode=optimized reps=8 ===
+GPU        : NVIDIA GeForce RTX 4050 Laptop GPU
+Mode       : optimized  batch size: 67 MB
+Batches    : 200
+Total time : 13.692 s
+Per batch  : 68.46 ms
+Throughput : 14.6 batches/s
+Checksum   : 4.213962e+09
+
+
